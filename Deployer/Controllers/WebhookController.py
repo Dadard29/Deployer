@@ -3,10 +3,10 @@ import json
 from flask import request
 from flask_restplus import Resource
 
-from Deployer.Common.CustomExceptions import BusinessException
-from Deployer.Common.Format import format_response, format_error
-from Deployer.Host.Host import deploy_ns, webhook
-from Deployer.Manager.WebhookManager import WebhookManager
+from Common.CustomExceptions import BusinessException
+from Common.Format import format_response, format_error
+from Host.Host import deploy_ns, webhook
+from Manager.WebhookManager import WebhookManager
 
 
 @deploy_ns.route('/')

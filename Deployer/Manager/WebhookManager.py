@@ -1,5 +1,5 @@
-from Deployer.Common.CustomExceptions import BusinessException, DalException
-from Deployer.Repository.WebhookRepository import WebhookRepository
+from Common.CustomExceptions import BusinessException, DalException
+from Repository.WebhookRepository import WebhookRepository
 
 
 class WebhookManager:

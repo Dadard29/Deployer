@@ -10,7 +10,7 @@
     "url_prefix": "/api/v1"
   },
   "api_host": {
-    "host_url": "localhost:8081"
+    "host_url": "*:8081"
   },
   "drone_api": {
     "host": "http://dadard.fr:8080/",

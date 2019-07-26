@@ -3,7 +3,7 @@ import os
 from flask import Flask, Blueprint
 from flask_restplus import Api, fields
 
-from Deployer.Common.ConfigAccessor import ConfigAccessor
+from Common.ConfigAccessor import ConfigAccessor
 
 logger_config = ConfigAccessor.get_config_dict("logging")
 logging.config.dictConfig(logger_config)
@@ -47,4 +47,4 @@ webhook = api.model('Webhook', {
 
 deploy_ns = api.namespace('deploy', description="deploy services from webhooks")
 
-from Deployer.Controllers.WebhookController import *
+from Controllers.WebhookController import *

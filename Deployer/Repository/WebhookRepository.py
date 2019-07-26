@@ -5,8 +5,8 @@ from time import sleep
 
 import requests
 
-from Deployer.Common.CustomExceptions import BuildException, ServiceStartException, DalException
-from Deployer.Common.ConfigAccessor import ConfigAccessor
+from Common.CustomExceptions import BuildException, ServiceStartException, DalException
+from Common.ConfigAccessor import ConfigAccessor
 
 logger = logging.getLogger("deploy_dal")
 
