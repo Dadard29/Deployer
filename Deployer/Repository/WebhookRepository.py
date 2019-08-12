@@ -22,7 +22,8 @@ class WebhookRepository:
             git_password = os.environ["GIT_PASSWORD"]
 
             repo_service_name = repo_name + ".service"
-            repo_service_url = self.service_config["git"].format(git_usermame=git_username, git_password=git_password) + repo_service_name
+            git_url = self.service_config["git"].format(git_usermame=git_username, git_password=git_password)
+            repo_service_url = git_url + repo_service_name
             os.chdir(self.service_config["bundle_directory"])
 
             if repo_service_name not in os.listdir('.'):
