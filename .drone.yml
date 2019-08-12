@@ -15,6 +15,11 @@ steps:
 
 - name: push to registry
   image: plugins/docker
+  environment:
+    GIT_USERNAME:
+      from_secret: git_username
+    GIT_PASSWORD:
+      from_secret: git_password
   settings:
     repo: registry.gitlab.com/dadard291/deployer
     registry: registry.gitlab.com

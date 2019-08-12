@@ -13,7 +13,7 @@
     "host_url": "*:8081"
   },
   "services": {
-    "git": "http://dadard.fr:4300/Services/",
+    "git": "http://{git_username}:{git_password}@dadard.fr:4300/Services/",
     "bundle_directory": "/opt/services"
   },
   "logging": {

@@ -9,4 +9,10 @@ COPY . .
 
 USER root
 RUN chmod a+w ./logs
+RUN mkdir -p /opt/services
+
+ENV GIT_USERNAME=$GIT_USERNAME
+ENV GIT_PASSWORD=$GIT_PASSWORD
+
 CMD ["python", "Deployer/app.py"]
+

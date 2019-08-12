@@ -18,12 +18,15 @@ class WebhookRepository:
     def deploy(self, repo_name):
         cwd = os.getcwd()
         try:
+            git_username = os.environ["GIT_USERNAME"]
+            git_password = os.environ["GIT_PASSWORD"]
+
             repo_service_name = repo_name + ".service"
-            repo_service_url = self.service_config["git"] + repo_service_name
+            repo_service_url = self.service_config["git"].format(git_usermame=git_username, git_password=git_password) + repo_service_name
             os.chdir(self.service_config["bundle_directory"])
 
             if repo_service_name not in os.listdir('.'):
-                os.system('git clone {}'.format(repo_service_url))
+                os.system('git clone {git_url}'.format(git_url=repo_service_url))
                 os.chdir(repo_service_name)
             else:
                 os.chdir(repo_service_name)
