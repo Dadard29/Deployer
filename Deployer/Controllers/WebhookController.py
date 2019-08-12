@@ -16,7 +16,7 @@ class DeployFromWebhook(Resource):
         try:
             obj = request.data.decode("utf-8")
             d = json.loads(obj)
-            WebhookManager().deploy(d["repository"]["name"], )
+            WebhookManager().deploy(d["repository"])
             return format_response('deployed', {})
         except BusinessException as be:
             return format_error(be.msg)
