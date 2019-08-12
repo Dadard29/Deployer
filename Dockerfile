@@ -1,5 +1,8 @@
 FROM python:latest
 
+ARG GIT_USERNAME
+ARG GIT_PASSWORD
+
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 
