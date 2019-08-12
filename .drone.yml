@@ -6,6 +6,13 @@ platform:
   arch: amd64
 
 steps:
+- name: set version
+  image: alpine
+  environment:
+    VERSION: 0.${DRONE_BUILD_NUMBER}
+  commands:
+    - sed -i -e "s+{{VERSION}}+$VERSION+g" "config.json"
+
 - name: push to registry
   image: plugins/docker
   settings:

@@ -26,23 +26,13 @@ api = Api(
     license_url=api_config['license_url']
 )
 
-user = {
-    "name": fields.String(),
-    "email": fields.String(),
-    "username": fields.String()
-}
-
 commit = {
     "id": fields.String(attribute='att1'),
     "message": fields.String(attribute='att2')
 }
 
 webhook = api.model('Webhook', {
-    "secret": fields.String(),
-    "ref": fields.String(),
-    "before": fields.String(),
-    "after": fields.String(),
-    "compare_url": fields.String()
+    "repository": fields.String()
 })
 
 deploy_ns = api.namespace('deploy', description="deploy services from webhooks")

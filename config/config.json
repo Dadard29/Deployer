@@ -1,7 +1,7 @@
 {
   "api_swagger" : {
     "doc": "/swagger/",
-    "version": "1",
+    "version": "{{VERSION}}",
     "description": "This API waits to VCS webhooks and deploy when received",
     "title": "Deployer",
     "contact": "florian.charpentier@epita.fr",
@@ -11,12 +11,6 @@
   },
   "api_host": {
     "host_url": "*:8081"
-  },
-  "drone_api": {
-    "host": "http://dadard.fr:8080/",
-    "api": "api/repos/dadard/WardenBot/",
-    "build_list": "builds",
-    "token": "Zf0jBwlWWw1V0R63Mw4wYOmUI9od4Rbd"
   },
   "services": {
     "git": "http://dadard.fr:4300/Services/",
