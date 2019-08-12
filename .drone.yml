@@ -11,7 +11,7 @@ steps:
   environment:
     VERSION: 0.${DRONE_BUILD_NUMBER}
   commands:
-    - sed -i -e "s+{{VERSION}}+$VERSION+g" "config.json"
+    - sed -i -e "s+{{VERSION}}+$VERSION+g" "config/config.json"
 
 - name: push to registry
   image: plugins/docker
