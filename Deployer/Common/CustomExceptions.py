@@ -8,10 +8,10 @@ class ServiceStartException(Exception):
         self.status_code = status_code
 
 
-class BuildException(Exception):
-    def __init__(self, build_number, msg="Build failed", status_code=HTTPStatus.INTERNAL_SERVER_ERROR):
-        self.msg = msg
-        self.build_number = build_number
+class RepositoryException(Exception):
+    def __init__(self, return_code, repository, msg="Failed to fetch the repository", status_code=HTTPStatus.INTERNAL_SERVER_ERROR):
+        self.msg = "{}: {}".format(msg, repository)
+        self.return_code = return_code
         self.status_code = status_code
 
 
