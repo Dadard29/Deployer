@@ -17,11 +17,11 @@ class WebhookRepository:
 
     def deploy(self, repo_name):
         cwd = os.getcwd()
+        repo_service_name = repo_name + ".service"
         try:
             git_username = os.environ["GIT_USERNAME"]
             git_password = os.environ["GIT_PASSWORD"]
 
-            repo_service_name = repo_name + ".service"
             git_url = "http://{}:{}@{}".format(git_username, git_password, self.service_config["git"])
             repo_service_url = git_url + repo_service_name
             os.chdir(self.service_config["bundle_directory"])
@@ -42,6 +42,8 @@ class WebhookRepository:
 
         except ServiceStartException as se:
             raise DalException(se.msg)
+        except FileNotFoundError:
+            raise RepositoryException(2, repo_service_name)
         except Exception as e:
             raise DalException(str(e))
         finally:
