@@ -10,10 +10,10 @@
     "url_prefix": "/api/v1"
   },
   "api_host": {
-    "host_url": "*:8081"
+    "host_url": "*:8030"
   },
   "services": {
-    "git": "dadard.fr:4300/Services/",
+    "git": "dadard.fr:8010/Services/",
     "bundle_directory": "/opt/services"
   },
   "logging": {
