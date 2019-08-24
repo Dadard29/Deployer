@@ -15,7 +15,7 @@ USER root
 RUN chmod a+w ./logs
 RUN mkdir -p /opt/services
 RUN apt-get update
-RUN apt-get --assume-yes install vim
+RUN apt-get --assume-yes install vim docker-compose
 
 ENV GIT_USERNAME=$GIT_USERNAME
 ENV GIT_PASSWORD=$GIT_PASSWORD
