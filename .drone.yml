@@ -16,12 +16,15 @@ steps:
 - name: push to registry
   image: plugins/docker
   environment:
+    MYSQL_MAIN_PASSWORD:
+      from_secret: mysql_main_password
     GIT_USERNAME:
       from_secret: git_username
     GIT_PASSWORD:
       from_secret: git_password
   settings:
     build_args_from_env:
+      - MYSQL_MAIN_PASSWORD
       - GIT_USERNAME
       - GIT_PASSWORD
     repo: registry.gitlab.com/dadard291/deployer

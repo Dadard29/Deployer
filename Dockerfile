@@ -2,6 +2,7 @@ FROM python:latest
 
 ARG GIT_USERNAME
 ARG GIT_PASSWORD
+ARG MYSQL_MAIN_PASSWORD
 
 WORKDIR /usr/src/app
 COPY requirements.txt ./
@@ -17,6 +18,7 @@ RUN mkdir -p /opt/services
 RUN apt-get update
 RUN apt-get --assume-yes install vim docker-compose
 
+ENV MYSQL_MAIN_PASSWORD=$MYSQL_MAIN_PASSWORD
 ENV GIT_USERNAME=$GIT_USERNAME
 ENV GIT_PASSWORD=$GIT_PASSWORD
 
