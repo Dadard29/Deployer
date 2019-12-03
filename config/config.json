@@ -10,7 +10,7 @@
     "url_prefix": "/api/v1"
   },
   "api_host": {
-    "host_url": "*:8030"
+    "host_url": "*:80"
   },
   "services": {
     "git": "dadard.fr:8010/Services/",
